@@ -14,6 +14,7 @@
         $specialty = $_POST["Specialty"];
         //call function to insert and track if success or not
         $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
+        $specialtyName = $crud->getSpecialtyById($specialty);
 
         if ($isSuccess){
             include 'includes/successmessage.php';           
@@ -42,7 +43,7 @@
             <h3 class="card-title">
             <?php echo $_POST["InputFirstName"] . " " . $_POST['InputLastName'] ?>
             </h3>
-            <h5 class="card-subtitle mb-2 text-muted"><?php echo $_POST['Specialty'] ?></h5>
+            <h5 class="card-subtitle mb-2 text-muted"><?php echo $specialtyName['name'];  ?></h5>
             <h6 class="card-text"><?php echo "DOB : ".$_POST['DOB']."</br>". $_POST['InputEmail']."</br>". $_POST['InputPhone'] ?></h6>
             
         </div>

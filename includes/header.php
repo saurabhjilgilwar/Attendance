@@ -1,3 +1,9 @@
+<?php 
+    //this include the session file. this file contain code that start/resume the session.
+    //by having it in the header file, It will be included on every page, allowing session capability to used on every page across the website.
+    include_once 'includes/session.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,18 +19,29 @@
     <title>Attendance - <?php echo $title ?></title>
   </head>
   <body>
-    <div class="container" >
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">IT Conference</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+        <div class="collapse navbar-collapse row" id="navbarNavAltMarkup">
+          <div class="navbar-nav col-10">
             <a class="nav-item nav-link active" aria-current="page" href="index.php">Home</a>
-            <a class="nav-item nav-link active" href="viewrecords.php">View Attendees</a>
+            <a class="nav-item nav-link" href="viewrecords.php">View Attendees</a>
+          </div>
+          <div class="navbar-nav col-2">
+          <?php 
+              if(!isset($_SESSION['userid'])){
+          ?>
+            <a class="nav-item nav-link" href="login.php">Login </a>
+            <span class="sr-only"></span>
+          <?php } else { ?>
+            <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only"></span></a>
+          <?php } ?>
           </div>
         </div>
       </div>
     </nav>
+    <div class="container" >
