@@ -7,5 +7,8 @@ Practise Project on PHP and Crud application
 link : https://php-registration-project.herokuapp.com/
 
 It has User Authentication, only admin can login
-to see that use
-username:
+to see that use  
+
+username: admin 
+
+password: password
