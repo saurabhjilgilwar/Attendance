@@ -7,10 +7,10 @@
     // $charset = 'utf8mb4';
  
     //remote database connection 
-    $host = 'remotemysql.com';
-    $db = 'YrIQJzmptg';
-    $usern = 'YrIQJzmptg';
-    $pass = 'RrM1e1PMrF';
+    $host = 'brcc0rm8qh0td6241ppc-mysql.services.clever-cloud.com';
+    $db = 'brcc0rm8qh0td6241ppc';
+    $usern = 'upbw3fcoegwdamsy';
+    $pass = '9HYILau2yAWCgW9YTDpn';
     $charset = 'utf8mb4';
     
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
